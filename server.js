@@ -8,6 +8,7 @@ const axios = require("axios");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+const HOST = '0.0.0.0';
 
 //Middleware
 app.use(cors()); //Not needed for this project but good practice
@@ -39,4 +40,4 @@ app.get("/me", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, HOST, () => console.log(`Server running on http://localhost:${PORT}`));
